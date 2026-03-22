@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+    
+    <!-- 根据用户ID查询用户 -->
+    <select id="selectByUserId" resultType="com.example.pojo.User">
+        SELECT id, user_id as userId, password, role, building, room, create_time as createTime, update_time as updateTime 
+        FROM users WHERE user_id = #{userId}
+    </select>
+    
+    <!-- 根据用户ID和密码查询用户（登录） -->
+    <select id="selectByUserIdAndPassword" resultType="com.example.pojo.User">
+        SELECT id, user_id as userId, password, role, building, room, create_time as createTime, update_time as updateTime 
+        FROM users WHERE user_id = #{userId} AND password = #{password}
+    </select>
+    
+    <!-- 查询所有用户 -->
+    <select id="selectAll" resultType="com.example.pojo.User">
+        SELECT id, user_id as userId, password, role, building, room, create_time as createTime, update_time as updateTime 
+        FROM users
+    </select>
+    
+    <!-- 插入用户 -->
+    <insert id="insert">
+        INSERT INTO users (user_id, password, role, building, room)
+        VALUES (#{userId}, #{password}, #{role}, #{building}, #{room})
+    </insert>
+    
+    <!-- 更新用户密码 -->
+    <update id="updatePassword">
+        UPDATE users SET password = #{password} WHERE user_id = #{userId}
+    </update>
+    
+    <!-- 更新用户宿舍信息 -->
+    <update id="updateDormitory">
+        UPDATE users SET building = #{building}, room = #{room} WHERE user_id = #{userId}
+    </update>
+    
+    <!-- 更新用户信息 -->
+    <update id="update">
+        UPDATE users 
+        SET password = #{password}, building = #{building}, room = #{room}
+        WHERE user_id = #{userId}
+    </update>
+</mapper>
