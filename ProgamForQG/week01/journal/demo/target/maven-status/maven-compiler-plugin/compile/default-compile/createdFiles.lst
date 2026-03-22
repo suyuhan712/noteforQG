@@ -1,0 +1,10 @@
+com\example\demo\dao\StudentRepository.class
+com\example\demo\service\StudentService.class
+com\example\demo\TestController.class
+com\example\demo\converter\StudentConverter.class
+com\example\demo\service\Response.class
+com\example\demo\Application.class
+com\example\demo\dto\StudentDTO.class
+com\example\demo\dao\Student.class
+com\example\demo\service\StudentServicelmpl.class
+com\example\demo\controller\StudentController.class

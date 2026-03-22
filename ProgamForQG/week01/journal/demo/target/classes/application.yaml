@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: boot-demo  # 应用名，和视频保持一致
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8  # 数据库地址，test是你之前创建的库名
+    username: root  # MySQL用户名
+    password: suyuhan666666  # 这里填你的MySQL密码，比如 suyuhan666666，空着就是无密码
+  # （可选）JPA 配置，和视频里的实体映射对应
+  jpa:
+    hibernate:
+      ddl-auto: update  # 自动更新表结构，不会删除数据
+    show-sql: true  # 控制台打印执行的SQL语句，方便调试
+    properties:
+      hibernate:
+        format_sql: true  # 格式化SQL，看起来更清晰
